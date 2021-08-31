@@ -12,7 +12,7 @@ class Run(Enum):
 
 
 inputSize = 5
-outputSize = 5
+outputSize = 4
 
 # loads ratings and movies
 ratings = pd.read_csv('dataset/ratings.csv')
