@@ -2,6 +2,8 @@
 
 This program gives a user a recommendation for several movies based on movies he has seen before and how he rates them
 
+###The programs require the packages `pandas` and `matplotlib`
+
 ## "Normal" run
 
 A "Normal" run consists of the user entering several movies and receiving recommendations  

@@ -1,4 +1,3 @@
-import random
 import pandas as pd
 import sys
 import matplotlib.pyplot as plt
@@ -82,7 +81,6 @@ def printBestK(user_ratings, k):
     for movie, rating in user_ratings:
         similar_movies = similar_movies.append(get_similar(movie, rating), ignore_index=True)
 
-    # TODO remove movies that were selected and show only k
     recommendations = list(similar_movies.sum().sort_values(ascending=False).head(20).index)
     movies_the_user_rated = [name for name, rating in user_ratings]
     final_list = [movie_name for movie_name in recommendations if movie_name not in movies_the_user_rated]
@@ -107,7 +105,7 @@ def mainForLearningInputSize():
         number_of_users += 1
         user_ratings = getUserRatings(5)
         for i in range(1, 6):
-            printBestK(random.choices(user_ratings, k=i), outputSize)
+            printBestK(user_ratings[:i-1], outputSize)
             ratings_by_input_length[i] += inputRating('Please rate the list of movies from 1-5')
         if not inputBoolean("Do you want to test another person?"):
             break
